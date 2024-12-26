@@ -9,7 +9,7 @@ const CT4 = () => {
             <img src={content5} alt='content5' className='min-w-[1234px]'/>
         </div>
 
-        <div className='bg-red-600 border-b rounded-lg'>
+        <div className='bg-green-800 rounded-b-lg'>
             <HorizontalCardProduct category={"Dược mỹ phẩm"}/>
         </div>
     </div>

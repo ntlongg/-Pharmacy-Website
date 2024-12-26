@@ -30,6 +30,7 @@ const AllUsers = () => {
 
         if(dataResponse.success){
             setAllUsers(dataResponse.data)
+            console.log('data user',dataResponse)
         }
 
         if(dataResponse.error){

@@ -16,6 +16,8 @@ import ResetPasswordPage from "../papes/ResetPassword";
 import Dashboard from "../component/Dashboard"
 import PersonnelAdmin from "../papes/PersonnelPanel";
 import TranitionProduct from "../papes/TranitionProduct";
+import ViewOder from "../component/ViewOder";
+import ViewOderCus from "../component/ViewOderCus";
 
 
 
@@ -65,6 +67,10 @@ const router = createBrowserRouter([
                 path:"/search",
                 element:<SearchProduct/>
             },
+            {
+                path : "oder_custommer",
+                element :<ViewOderCus/>
+            },
         ]
     },
     {
@@ -82,6 +88,10 @@ const router = createBrowserRouter([
             {
                 path : "dashboard",
                 element :<Dashboard/>
+            },
+            {
+                path : "oder_admin",
+                element :<ViewOder/>
             },
         ]
     },

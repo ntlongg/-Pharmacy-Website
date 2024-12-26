@@ -44,9 +44,11 @@ const AdminPanel = () => {
   useEffect(() => {
     if (user) {
       if (user.role === ROLE.ADMIN) {
-        navigate("/admin-panel");
-      } else {
-        navigate("/personnel-panel");
+        navigate("/admin-panel/dashboard");
+      } else if (user.role === ROLE.CUSTOMER) { 
+        navigate("/"); 
+      } else { 
+        navigate("/"); 
       }
     }
   }, [user]);
@@ -73,7 +75,7 @@ const AdminPanel = () => {
                     <Link to={""} className='flex items-center px-10 py-1 mt-10 hover:text-gray-200  hover:ml-3 transition-all duration-300 ease-in-out relative'> <FiTrendingUp  className='mr-3'/>Báo cáo</Link>                  
                     <Link to={"all-users"} className='flex items-center px-10 py-1 mt-10 hover:text-gray-200  hover:ml-3 transition-all duration-300 ease-in-out relative'> <LuUsers className='mr-3'/>Quản lý nhân sự</Link>
                     <Link to={"all-products"} className='flex items-center px-10 py-1 mt-10 hover:text-gray-200  hover:ml-2 transition-all duration-300 ease-in-out relative'> <BsBoxSeam className='mr-3'/>Quản lý kho hàng</Link>
-                    <Link to={""} className='flex items-center px-10 py-1 mt-10 hover:text-gray-200  hover:ml-3 transition-all duration-300 ease-in-out relative'> <FiTruck className='mr-3'/>Order</Link>
+                    <Link to={"oder_admin"} className='flex items-center px-10 py-1 mt-10 hover:text-gray-200  hover:ml-3 transition-all duration-300 ease-in-out relative'> <FiTruck className='mr-3'/>Order</Link>
                   </nav>
                 </div> 
                 <div onClick={handlLogout} className="cursor-pointer w-3 ml-10 hover:text-white pt-10">

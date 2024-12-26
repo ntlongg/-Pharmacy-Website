@@ -93,7 +93,7 @@ const SummaryApi = {
         method : "delete"
     },
     searchProduct : {
-        url : `${backendDomin}/api/search `,
+        url : `${backendDomin}/api/search`,
         method : "get"
     },
     filterProduct : {
@@ -111,7 +111,27 @@ const SummaryApi = {
     Cartupdate : {
         url : `${backendDomin}/api/update-cart`,
         method : 'post'
-    }
+    },
+    ViewOderProduct : {
+        url : `${backendDomin}/api/view-cart-oder`,
+        method : "get"
+    },
+    ViewAllOrder : {
+        url : `${backendDomin}/api/all-order`,
+        method : "get"
+    },
+    deleteOrder : {
+        url : `${backendDomin}/api/delete-order`,
+        method : "delete"
+    },
+    updataOrder : {
+        url : `${backendDomin}/api/update-order`,
+        method : "post"
+    },
+    updataOrderAccept : {
+        url : `${backendDomin}/api/update-order-accept`,
+        method : "post"
+    },
 }
 
 export default SummaryApi

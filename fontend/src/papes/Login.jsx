@@ -5,7 +5,7 @@ import { IoIosEye } from 'react-icons/io';
 import { FaEyeSlash } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
-import AppContext from '../context';
+import Context from '../context';
 import SummaryApi from '../common';
 import FloatingShape from '../component/FloatingShape';
 
@@ -19,7 +19,7 @@ const Login = () => {
   });
 
   const navigate = useNavigate();
-  const { fetchUserDetails, fetchUserAddToCart } = useContext(AppContext);
+  const { fetchUserDetails, fetchUserAddToCart } = useContext(Context);
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;

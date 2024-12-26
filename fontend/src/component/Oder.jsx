@@ -1,16 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { CgClose } from "react-icons/cg";
 import SummaryApi from '../common';
  import { toast } from 'react-toastify'
+import Context from '../context';
+
 const Oder = ({ 
   onClose,
-  fetchData
 }) => {
     const [data,setData] = useState({
-      Name : "",
       Address : "",
       Phone : "",
   })
+  const { fetchUserAddToCart } = useContext(Context)
 
   const handleOnChange = (e)=>{
     const { name, value} = e.target
@@ -22,16 +23,15 @@ const Oder = ({
       }
     })
 }
-const handleSubmit = async(e) =>{
+const handleSubmit = async(e,id) =>{
   e.preventDefault()
-  
   const response = await fetch(SummaryApi.Cartupdate.url,{
     method : SummaryApi.Cartupdate.method,
     credentials : 'include',
     headers : {
       "content-type" : "application/json"
     },
-    body : JSON.stringify(data)
+    body: JSON.stringify({ ...data, productId: id })
     
   })
 
@@ -40,14 +40,14 @@ const handleSubmit = async(e) =>{
   if(responseData.success){
       toast.success(responseData?.message)
       onClose()
-      fetchData()
+      console.log("dât2",responseData)
+      fetchUserAddToCart()
   }
 
 
   if(responseData.error){
     toast.error(responseData?.message)
     onClose()
-    
   }
 }
 
@@ -65,31 +65,19 @@ const handleSubmit = async(e) =>{
             </div>
             <form className='grid p-4 gap-2 overflow-y-scroll h-full pb-5' onSubmit={handleSubmit}>
 
-                <label htmlFor='productName' className='mt-3'>Tên Khách hàng :</label>
-                <input 
-                type='text' 
-                id='Name' 
-                placeholder='Vui Lòng nhập tên' 
-                name='Name'
-                value={data.Name} 
-                onChange={handleOnChange}
-                className='p-2 bg-slate-100 border rounded'
-                required
-                />
-
-                <label htmlFor='brandName' className='mt-3'>Địa chỉ giao hàng :</label>
+                <label htmlFor='Address' className='mt-3'>Địa chỉ giao hàng :</label>
                 <input 
                 type='text' 
                 id='Adress' 
                 placeholder='Vui lòng nhập địa chỉ' 
-                value={data.Adress} 
-                name='Adress'
+                value={data.Address} 
+                name='Address'
                 onChange={handleOnChange}
                 className='p-2 bg-slate-100 border rounded'
                 required
                 />
 
-                <label htmlFor='brandName' className='mt-3'>Số điện thoại :</label>
+                <label htmlFor='Phone' className='mt-3'>Số điện thoại :</label>
                 <input 
                 type='number' 
                 id='Phone' 

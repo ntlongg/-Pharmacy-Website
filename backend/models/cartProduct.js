@@ -10,9 +10,6 @@ const addToCart = mongoose.Schema({
         ref : 'user',
         type : String,
    },
-   Name: String,
-   Adress: String,
-   Phone: Number,
 },{
     timestamps : true
 })

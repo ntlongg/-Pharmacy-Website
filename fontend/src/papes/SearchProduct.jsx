@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import SummaryApi from '../common'
 import VerticalCard from '../component/VerticalCard'
 
+
 const SearchProduct = () => {
     const query = useLocation()
     const [data,setData] = useState([])
@@ -15,7 +16,7 @@ const SearchProduct = () => {
         const response = await fetch(SummaryApi.searchProduct.url+query.search)
         const dataResponse = await response.json()
         setLoading(false)
-
+        console.log("datarepson",dataResponse)
         setData(dataResponse.data)
     }
 
@@ -31,11 +32,11 @@ const SearchProduct = () => {
         )
       }
  
-      <p className='text-lg font-semibold my-3'>Search Results : {data.length}</p>
+      <p className='text-lg font-semibold pt-20'>Kết quả tìm kiếm : {data.length}</p>
 
       {
         data.length === 0 && !loading && (
-           <p className='bg-white text-lg text-center p-4'>No Data Found....</p>
+           <p className='bg-white text-lg text-center p-4'>Không tìm thấy thuốc....</p>
         )
       }
 

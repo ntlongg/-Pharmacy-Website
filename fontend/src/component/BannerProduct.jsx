@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import image1 from '../assets/image/banner1.webp';
-import image2 from '../assets/image/banner2.webp';
-import image3 from '../assets/image/banner3.webp';
+import image2 from '../assets/image/banner2.jpg';
+import image3 from '../assets/image/banner3.jpg';
 import image4 from '../assets/image/banner4.webp';
 import bannersub from '../assets/image/banner-sub.jpg';
 import bannersub2 from '../assets/image/bannersub1.png';

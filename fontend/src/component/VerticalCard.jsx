@@ -22,7 +22,7 @@ const VerticalCard = ({loading,data = []}) => {
            {  loading ? (
                 loadingList.map(()=>{
                     return(
-                        <div className='w-full flex flex-col min-w-[280px] md:min-w-[320px] max-w-[280px] md:max-w-[320px] h-36 bg-slate-400 rounded-sm shadow flex'>
+                        <div className='w-full flex-col min-w-[280px] md:min-w-[320px] max-w-[280px] md:max-w-[320px] h-36 bg-slate-400 rounded-sm shadow flex'>
                             <div className='bg-slate-400 h-full p-4 min-w-[120px] md:min-w-[145px] animate-pulse'>                           
                                 <h2 className='font-medium text-base md:text-lg text-ellipsis line-clamp-1 text-black bg-slate-400 animate-pulse p-1 rounded-full'></h2>
                                 <p className='capitalize text-slate-500 p-1 bg-slate-400 animate-pulse rounded-full'></p>
@@ -48,7 +48,7 @@ const VerticalCard = ({loading,data = []}) => {
                                 <p className='text-red-600 font-medium'>{ displayVNDCurrency(product?.price) }</p>
                                 <p className='text-slate-500 line-through'>{ displayVNDCurrency(product?.sellingPrice)  }</p>
                             </div>
-                            <button className=' text-2xl text-black border rounded-full border-lime-400 hover:bg-green-600 bg-lime-500  px-16 py-0.5 rounded-full' onClick={(e)=>handleAddToCart(e,product?._id)}><MdOutlineAddShoppingCart /></button>
+                            <button className=' text-2xl text-black border border-lime-400 hover:bg-green-600 bg-lime-500  px-16 py-0.5 rounded-full' onClick={(e)=>handleAddToCart(e,product?._id)}><MdOutlineAddShoppingCart /></button>
                         </div>
                       </div>
                     </Link>

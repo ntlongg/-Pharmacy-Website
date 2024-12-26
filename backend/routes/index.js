@@ -30,7 +30,15 @@ const userResetPassword  = require('../controller/user/userResetPassword')
 const verifyEmail = require('../controller/user/VerifyUser')
 const userCreateController = require('../controller/user/userCreate')
 const paymentCart = require('../payment/momo')
-const UpdateCart = require('../controller/cart/UpdateCart')
+const AddToCart = require('../controller/cart/UpdateCart')
+const ViewOder = require('../controller/cart/addToCartViewOder')
+const allOder = require('../controller/cart/allOder')
+const deleteOrderProduct = require('../controller/cart/deleteOrderProduct')
+const StatusUpdataOrder = require('../controller/cart/StatusUpdataOrder')
+const StatusAceept = require('../controller/cart/StatusAceept')
+
+
+
 
 
 
@@ -64,7 +72,13 @@ router.get("/view-cart-product",authToken,addToCartViewProduct)
 router.post("/update-cart-product",authToken,updateAddToCartProduct)
 router.delete("/delete-cart-product",authToken,deleteAddToCartProduct)
 router.post("/payment",authToken,paymentCart)
-router.post("/update-cart",authToken,UpdateCart)
+router.post("/update-cart",authToken,AddToCart)
+router.get("/view-cart-oder",authToken,ViewOder)
+router.get("/all-order",authToken,allOder)
+router.delete("/delete-order",authToken,deleteOrderProduct)
+router.post("/update-order",authToken,StatusUpdataOrder)
+router.post("/update-order-accept",authToken,StatusAceept)
+
 
 
 

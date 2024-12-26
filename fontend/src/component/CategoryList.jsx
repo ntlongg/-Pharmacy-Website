@@ -17,49 +17,49 @@ const CategoryList = () => {
                     <div className='w-16 h-16 md:w-28 md:h-28 overflow-hidden p-4 bg-white border rounded-full border-green-600 flex items-center justify-center'>
                         <img src={category1} alt='Category 1' className='h-full object-scale-down hover:scale-125 transition-all' />
                     </div>
-                    <p className='text-center hover:text-white text-sm md:text-base capitalize'>Dược mỹ phẩm</p>
+                    <p className='text-center  text-sm md:text-base capitalize'>Dược mỹ phẩm</p>
                 </Link>
                 {/* Vitamin và khoáng chất*/}
                 <Link to={"/product-category?category=Vitamin%20và%20khoáng%20chất"} className='cursor-pointer'>
                     <div className='w-16 h-16 md:w-28 md:h-28 overflow-hidden p-4 bg-white border rounded-full border-green-600 flex items-center justify-center'>
                         <img src={category2} alt='Category 1' className='h-full object-scale-down hover:scale-125 transition-all' />
                     </div>
-                    <p className='text-center hover:text-white text-sm md:text-base capitalize'>Vitamin và khoáng chất</p>
+                    <p className='text-center  text-sm md:text-base capitalize'>Vitamin và khoáng chất</p>
                 </Link>
                 {/* Chăm sóc cá nhân*/}
                 <Link to={"/product-category?category=Chăm%20sóc%20cá%20nhân"} className='cursor-pointer'>
                     <div className='w-16 h-16 md:w-28 md:h-28 overflow-hidden p-4 bg-white border rounded-full border-green-600 flex items-center justify-center'>
                         <img src={category3} alt='Category 1' className='h-full object-scale-down hover:scale-125 transition-all' />
                     </div>
-                    <p className='text-center hover:text-white text-sm md:text-base capitalize'>Chăm sóc cá nhân</p>
+                    <p className='text-center  text-sm md:text-base capitalize'>Chăm sóc cá nhân</p>
                 </Link>
                 {/* Chăm sóc trẻ em */}
                 <Link to={"/product-category?category=Chăm%20sóc%20trẻ%20em"} className='cursor-pointer'>
                     <div className='w-16 h-16 md:w-28 md:h-28 overflow-hidden p-4 bg-white border rounded-full border-green-600 flex items-center justify-center'>
                         <img src={category4} alt='Category 1' className='h-full object-scale-down hover:scale-125 transition-all' />
                     </div>
-                    <p className='text-center hover:text-white text-sm md:text-base capitalize'>Chăm sóc trẻ em</p>
+                    <p className='text-center  text-sm md:text-base capitalize'>Chăm sóc trẻ em</p>
                 </Link>
                 {/*Dụng cụ y tế */}
                 <Link to={"/product-category?category=Dụng%20cụ%20y%20tế"} className='cursor-pointer'>
                     <div className='w-16 h-16 md:w-28 md:h-28 overflow-hidden p-4 bg-white border rounded-full border-green-600 flex items-center justify-center'>
                         <img src={category5} alt='Category 1' className='h-full object-scale-down hover:scale-125 transition-all' />
                     </div>
-                    <p className='text-center hover:text-white text-sm md:text-base capitalize'>Dụng cụ y tế</p>
+                    <p className='text-center  text-sm md:text-base capitalize'>Dụng cụ y tế</p>
                 </Link>
                 {/* Bố phế, hô hấp*/}
                 <Link to={"/product-category?category=Bố%20phế,%20hô%20hấp"} className='cursor-pointer'>
                     <div className='w-16 h-16 md:w-28 md:h-28 overflow-hidden p-4 bg-white border rounded-full border-green-600 flex items-center justify-center'>
                         <img src={category6} alt='Category 1' className='h-full object-scale-down hover:scale-125 transition-all' />
                     </div>
-                    <p className='text-center hover:text-white text-sm md:text-base capitalize'>Bố phế, hô hấp</p>
+                    <p className='text-center  text-sm md:text-base capitalize'>Bố phế, hô hấp</p>
                 </Link>
                 {/* Hỗ trợ tim mạch */}
                 <Link to={"/product-category?category=Hỗ%20trợ%20tim%20mạch"} className='cursor-pointer'>
                     <div className='w-16 h-16 md:w-28 md:h-28 overflow-hidden p-4 bg-white border rounded-full border-green-600 flex items-center justify-center'>
                         <img src={category7} alt='Category 1' className='h-full object-scale-down hover:scale-125 transition-all' />
                     </div>
-                    <p className='text-center hover:text-white text-sm md:text-base capitalize'>Hỗ trợ tim mạch</p>
+                    <p className='text-center  text-sm md:text-base capitalize'>Hỗ trợ tim mạch</p>
                 </Link>
             </div>
         </div>

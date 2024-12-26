@@ -1,24 +1,38 @@
+const OrderModel = require("../../models/invoiceModel");
 const addToCartModel = require("../../models/cartProduct");
 
 const AddToCart = async (req, res) => {
     try {
-        const addToCartProductId = req.body?._id;
-        const addToCartProductId1 = req.body?.productId;
-        const currentUserId = req.userId
-        const updateProduct = await addToCartModel.updateOne({ _id: addToCartProductId }, {
-        });
+        const totalQty = req.body.totalQty;
+        const currentUser = req.userId;
+        const { productId } = req.body;
+        const totalPrice = req.body.totalPrice;
 
-        // Xoá dữ liệu từ addToCartModel sau khi đặt hàng thành công
-        await addToCartModel.deleteOne({productId: addToCartProductId1 });
+        const newAddToCart = {
+            ...req.body,
+            userId: currentUser,
+            productId: productId,
+            totalQty:totalQty,
+            totalPrice:totalPrice
+            
+        };
 
-        res.json({
+        const order = new OrderModel(newAddToCart);
+        const saveProduct = await order.save();
+        const removeCartItems = await addToCartModel.deleteMany({ userId: currentUser });
+
+        // Kiểm tra xem removeCartItems đã hoạt động chính xác hay không
+        console.log(`${removeCartItems.deletedCount} mục đã được xóa khỏi giỏ hàng của userId: ${currentUser}`);
+
+        return res.json({
+            data: saveProduct,
             message: "Đặt hàng thành công",
-            data: updateProduct,
-            error: false,
-            success: true
+            success: true,
+            error: false
         });
     } catch (err) {
-        res.json({
+        console.error(err);
+        return res.status(500).json({
             message: err.message || err,
             error: true,
             success: false

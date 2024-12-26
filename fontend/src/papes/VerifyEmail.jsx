@@ -85,9 +85,9 @@ const EmailVerificationPage = () => {
         transition={{ duration: 0.5 }}
         className='bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-xl rounded-2xl shadow-2xl p-8 w-full max-w-md'>
         <h2 className='text-3xl font-bold mb-6 text-center bg-gradient-to-r from-green-400 to-emerald-500 text-transparent bg-clip-text'>
-          Verify Your Email
+          Xác minh Email của bạn
         </h2>
-        <p className='text-center text-gray-300 mb-6'>Enter the 6-digit code sent to your email address.</p>
+        <p className='text-center text-gray-300 mb-6'>Nhập mã gồm 6 chữ số được gửi đến địa chỉ email của bạn.</p>
 
         <form onSubmit={handleSubmit} className='space-y-6'>
           <div className='flex justify-between'>
@@ -112,7 +112,7 @@ const EmailVerificationPage = () => {
             disabled={code.some((digit) => !digit)}
             className='w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 disabled:opacity-50'
           >
-            {code.every((digit) => digit !== "") ? "Verifying..." : "Verify Email"}
+            {code.every((digit) => digit !== "") ? "Verifying..." : "Xác minh Email"}
           </motion.button>
         </form>
       </motion.div>
